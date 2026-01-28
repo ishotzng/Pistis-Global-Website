@@ -1,0 +1,12 @@
+name: "Deploy to server"
+on: ['push']
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout code
+        run: |
+          chmod +x deploy.sh
+          ./deploy.sh
+          
